@@ -26,17 +26,15 @@ class Scraper {
 
             // Create object for each article with relevant information
             articles.each((i,article) => {
-                const link = $(article).find('a').attr('href');
-                const img = $(article).find('img').attr('src');
+                const url = $(article).find('a').attr('href');
+                const image = $(article).find('img').attr('src');
                 const title = $(article).find('h2.title').text().trim();
                 const summary = $(article).find('p.teaser').text().trim();
                 const dateString = $(article).find('time').attr('datetime');
-                const datetime = moment(dateString).toDate();
+                const date = moment(dateString).toDate();
 
                 // Push new object onto returned array
-                news.push({
-                    link, img, title, summary, datetime
-                });
+                news.push({ url, image, title, summary, date });
             });
 
             // Parse news objects
