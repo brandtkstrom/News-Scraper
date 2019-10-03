@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 
 const DB_URI = process.env.MONGODB_URI || 'mongodb://localhost/mongoHeadlines';
 
-const DB = mongoose.createConnection(DB_URI, {useNewUrlParser: true});
+mongoose.connect(DB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
 
-DB.on('error', err => console.log('DB Error: ', err));
+mongoose.connection.on('error', err => console.log('DB Error: ', err));
 
-// Register Models
-require('../models/Headline')(DB);
-
-module.exports = DB;
+module.exports = mongoose.connection;
