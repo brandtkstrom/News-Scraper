@@ -5,8 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>News Scraper</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
+
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+
+        <div class="container-fluid">
+            <div class="row w-100 d-flex justify-content-between">
+
+                <a class="navbar-brand mb-0 h1" href="/">News Scraper</a>
+                <a href="/scrape" class="btn btn-lg btn-outline-light my-2 my-sm-0 align-self-middle" role="button">Scrape!</a>
+                <a href="/saved" class="btn btn-lg btn-outline-success my-2 my-sm-0" role="button">Saved</a>
+
+            </div>
+        </div>
+
+    </nav>
 
     {{!-- Render handlebars views here --}}
     {{{ body }}}
