@@ -1,16 +1,12 @@
-// Initialize and export our Express app
-const path = require('path');
-const express = require('express');
-const exphbs = require('express-handlebars');
+// Init DB connection
+const DB = require('./app/db');
 
-const app = express();
+// Init the Express app
+const app = require('./app/server');
 
-app.use(express.static(path.join(__dirname, 'public')));
-app.engine('handlebars', exphbs());
-app.set('view engine', 'handlebars');
-
-// Register html and api routes
-require('./routes/apiRoutes')(app);
-require('./routes/htmlRoutes')(app);
-
-module.exports = app;
+// Start server once connected to DB
+const PORT = process.env.PORT || 3000;
+DB.once('open', () => {
+    console.log('Successfully connected to MongoDB!');
+    app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));
+});
