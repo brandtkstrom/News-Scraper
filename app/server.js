@@ -7,6 +7,7 @@ const app = express();
 
 const PUBLIC = path.join(__dirname, '../public');
 app.use(express.static(PUBLIC));
+app.use(express.json())
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 

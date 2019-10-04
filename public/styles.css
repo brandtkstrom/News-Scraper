@@ -1,6 +1,11 @@
+
+a:hover {
+    text-decoration: none;
+}
+
 .icon-save {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     padding: 0;
     margin: 5px;
     transition: 100ms linear;

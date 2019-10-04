@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,16 +9,25 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+
+<body class="bg-muted">
 
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
 
-        <div class="container-fluid">
+        <div class="container-fluid m-0">
             <div class="row w-100 d-flex justify-content-between">
 
-                <a class="navbar-brand mb-0 h1" href="/">News Scraper</a>
-                <a href="/scrape" class="btn btn-lg btn-outline-light my-2 my-sm-0 align-self-middle" role="button">Scrape!</a>
-                <a href="/saved" class="btn btn-lg btn-outline-success my-2 my-sm-0" role="button">Saved</a>
+                <div class="col d-flex justify-content-start p-0">
+                    <a class="navbar-brand mx-3" href="/"><h3>News Scraper</h3></a>
+                </div>
+
+                <div class="col d-flex justify-content-center p-0">
+                    <a href="/scrape" class="btn btn-lg btn-outline-light my-2 my-sm-0 align-self-middle" role="button">Scrape!</a>
+                </div>
+
+                <div class="col d-flex justify-content-end p-0">
+                    <a href="/saved" class="btn btn-lg btn-outline-success my-2 my-sm-0" role="button">Saved</a>
+                </div>
 
             </div>
         </div>
@@ -28,4 +38,5 @@
     {{{ body }}}
 
 </body>
+
 </html>
