@@ -10,7 +10,9 @@ module.exports = app => {
         // Get all saved headlines from DB
         DB.Headline.find()
             .then(docs => {
-                res.render('saved');
+                res.render('saved', {
+                    headlines: docs
+                });
             })
             .catch(error => {
                 res.status(500).send(error.message || error);

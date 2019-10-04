@@ -1,1 +1,56 @@
-<h1 class="display-3">Saved Headlines</h1>
+<div class="container">
+    <div class="grid">
+
+        <div class="row my-4">
+
+            {{#if headlines}}
+
+                {{#each headlines}}
+
+                    <div class="card rounded-lg d-block mt-3 shadow-lg">
+                        <div class="row no-gutters">
+
+                            <div class="col-md-4">
+                                <img src="{{ image }}" class="card-img" alt="Headline picture">
+                            </div>
+
+                            <div class="col-md-7">
+                                <div class="card-body">
+                                    <a href="{{ url }}" target="_blank"><h5 id="title-{{ id }}" class="card-title">{{ title }}</h5></a>
+                                    <p class="card-text">{{ summary }}</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-1">
+
+                                <div class="d-flex flex-column w-100 h-100 text-right">
+
+                                    <img headline={{ _id }} class="icon" src="./images/trash.svg">
+                                    <img headline={{ _id }} class="icon mt-auto comment" src="./images/comment.svg">
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                {{/each}}
+
+            {{else}}
+
+                <div class="d-block w-100 text-center my-5">
+
+                    <h1 class="display-3">There are no saved headlines</h1>
+
+                </div>
+
+            {{/if}}
+
+        </div>
+
+    </div>
+</div>
+
+<script src="scrape.js"></script>
