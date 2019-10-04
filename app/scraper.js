@@ -8,7 +8,7 @@ class Scraper {
         this.url = 'https://www.npr.org/sections/news/';
     }
 
-    async scrapeNews(articleCount = 3) {
+    async scrapeNews() {
         const news = [];
         try {
             // Get washington post main page content
@@ -18,11 +18,10 @@ class Scraper {
             }
 
             // Load main section into Cheerio
-            const count = Math.max(1, articleCount);
             const $ = cheerio.load(response.data);
 
             // Get all article elements (up to specified amount)
-            const articles = $('article.item.has-image').slice(0, count);
+            const articles = $('article.item.has-image');
 
             // Create object for each article with relevant information
             articles.each((i,article) => {

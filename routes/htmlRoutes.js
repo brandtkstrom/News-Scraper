@@ -9,6 +9,7 @@ module.exports = app => {
     app.get('/saved', (req, res) => {
         // Get all saved headlines from DB
         DB.Headline.find()
+            .populate('comments')
             .then(docs => {
                 res.render('saved', {
                     headlines: docs
@@ -22,7 +23,7 @@ module.exports = app => {
     app.get('/scrape', (req, res) => {
         // Scrape new headlines, add to DB, then render view
         const scraper = new Scraper();
-        scraper.scrapeNews(10).then(headlines => {
+        scraper.scrapeNews().then(headlines => {
 
             res.render('home', {
                 headlines: headlines
