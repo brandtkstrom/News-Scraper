@@ -11,6 +11,10 @@ a:hover {
     text-decoration: none;
 }
 
+a.btn {
+    width: 8rem;
+}
+
 .icon {
     width: 25px;
     height: 25px;
@@ -75,7 +79,7 @@ a:hover {
     }
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 492px) {
 
     #nav-scrape {
         justify-content: flex-end;
@@ -86,14 +90,24 @@ a:hover {
     }
 }
 
-@media screen and (max-width: 336px) {
+@media screen and (max-width: 364px) {
 
+    #nav-brand {
+        justify-content: center;
+    }
     #nav-scrape {
         justify-content: flex-start;
     }
-
     #nav-saved {
         justify-content: flex-end;
+    }
+}
+
+@media screen and (max-width: 288px) {
+
+    a.btn {
+        width: 100%;
+        margin: 0 5px;
     }
 }
 
