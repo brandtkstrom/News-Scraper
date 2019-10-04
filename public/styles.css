@@ -1,0 +1,19 @@
+.icon-save {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    margin: 5px;
+    transition: 100ms linear;
+}
+
+.icon-save:hover {
+    transform: scale(1.5);
+    cursor: pointer;
+    color: rgb(92, 184, 92);
+}
+
+.card-img {
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}

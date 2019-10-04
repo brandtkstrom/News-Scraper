@@ -20,8 +20,7 @@ module.exports = app => {
     app.get('/scrape', (req, res) => {
         // Scrape new headlines, add to DB, then render view
         const scraper = new Scraper();
-        scraper.scrapeNews(3).then(headlines => {
-
+        scraper.scrapeNews(5).then(headlines => {
 
             res.render('home', {
                 headlines: headlines
