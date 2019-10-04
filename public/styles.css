@@ -1,4 +1,12 @@
 
+ #nav-scrape {
+    justify-content: center;
+}
+
+#nav-saved {
+    justify-content: flex-end;
+}
+
 a:hover {
     text-decoration: none;
 }
@@ -66,3 +74,26 @@ a:hover {
         width: 100%;
     }
 }
+
+@media screen and (max-width: 430px) {
+
+    #nav-scrape {
+        justify-content: flex-end;
+    }
+
+    #nav-saved {
+        justify-content: flex-end;
+    }
+}
+
+@media screen and (max-width: 336px) {
+
+    #nav-scrape {
+        justify-content: flex-start;
+    }
+
+    #nav-saved {
+        justify-content: flex-end;
+    }
+}
+
