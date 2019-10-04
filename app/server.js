@@ -5,7 +5,8 @@ const exphbs = require('express-handlebars');
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, 'public')));
+const PUBLIC = path.join(__dirname, '../public');
+app.use(express.static(PUBLIC));
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
