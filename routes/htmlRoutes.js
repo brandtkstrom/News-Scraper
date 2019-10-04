@@ -23,7 +23,9 @@ module.exports = app => {
         scraper.scrapeNews(3).then(headlines => {
 
 
-            res.render('home', headlines);
+            res.render('home', {
+                headlines: headlines
+            });
         }).catch(error => {
             res.status(500).send(error.message || error);
         })
