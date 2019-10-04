@@ -7,7 +7,7 @@
 
                 {{#each headlines}}
 
-                    <div id="{{ _id }}" class="card rounded-lg d-block mt-3 shadow-lg">
+                    <div id="{{ _id }}" class="card rounded-lg d-block mt-3 shadow">
                         <div class="row no-gutters">
 
                             <div class="col-md-4">
@@ -26,7 +26,7 @@
                                 <div class="d-flex flex-column align-items-end w-100 h-100">
 
                                     <img headline={{ _id }} class="delete icon" src="./images/trash.svg">
-                                    <img headline={{ _id }} class="delete icon mt-auto comment" src="./images/comment.svg">
+                                    <img headline={{ _id }} class="add-comment icon mt-auto" src="./images/comment.svg">
 
                                 </div>
 
@@ -35,6 +35,35 @@
 
                         </div>
                     </div>
+
+                    {{!-- Add comments if any --}}
+                    {{#if comments}}
+
+                        <div class="container-fluid p-0">
+                            <div class="grid">
+
+                            {{#each comments}}
+
+                                <div class="row w-100 d-flex my-3 mx-0 justify-content-end">
+
+                                    <div class="media comment shadow rounded-lg p-3">
+                                        <img class="user align-self-center mr-3" src="images/user.svg" alt="user pic">
+                                        <div class="media-body">
+
+                                            <p class="comment-text">{{ content }}</p>
+                                            <img headline={{ _id }} class="delete-comment icon" src="./images/trash.svg">
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            {{/each}}
+
+                            </div>
+                        </div>
+
+                    {{/if}}
 
                 {{/each}}
 
