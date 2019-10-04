@@ -1,13 +1,37 @@
 <div class="container">
     <div class="grid">
 
-        <div class="row justify-content-center">
-            <h1 class="display-3">Under Construction</h1>
+        <div class="row justify-content-center my-3">
+            <h1 class="display-3">Headlines</h1>
         </div>
 
         <div class="row">
+
             {{#each headlines}}
-                <p>{{title}}</p>
+
+                <div id="headline-{{ id }}" class="card d-block mb-3">
+                    <div class="row no-gutters">
+
+                        <div class="col-md-4">
+                            <img src="{{ image }}" class="card-img" alt="Headline picture">
+                        </div>
+
+                        <div class="col-md-7">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ title }}</h5>
+                                <p class="card-text">{{ summary }}</p>
+                            </div>
+                        </div>
+
+                         <div class="col-md-1 text-right">
+                             <button>
+                                <img headline={{ id }} class="icon-save" src="./images/save.svg">
+                             </button>
+                         </div>
+
+                    </div>
+                </div>
+
             {{/each}}
         </div>
 
