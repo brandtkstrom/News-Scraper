@@ -10,7 +10,3 @@ DB.once('open', () => {
     console.log('Successfully connected to MongoDB!');
     app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));
 });
-
-// const Scraper = require('./app/scraper');
-// const scraper = new Scraper();
-// scraper.scrapeNews();
