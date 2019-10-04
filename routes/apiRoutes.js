@@ -25,7 +25,20 @@ module.exports = app => {
                 res.json(doc);
             })
             .catch(err => {
-                res.status(500).send(err.message || err)
+                res.status(500).send(err.message || err);
+            });
+    });
+
+    app.delete('/api/headlines/:id', (req, res) => {
+        const headlineId = req.params.id;
+        db.Headline.deleteOne({ _id: headlineId })
+            .then(() => {
+                res.status(204).send('Delete successful');
+            })
+            .catch(err => {
+                const error = err.message || err;
+                console.log(`Error deleting Headline ${headlineId}: ${error}`);
+                res.status(500).send(error);
             });
     });
 };
