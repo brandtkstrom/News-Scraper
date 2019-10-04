@@ -26,6 +26,7 @@ class Scraper {
 
             // Create object for each article with relevant information
             articles.each((i,article) => {
+                const id = i;
                 const url = $(article).find('a').attr('href');
                 const image = $(article).find('img').attr('src');
                 const title = $(article).find('h2.title').text().trim();
@@ -34,7 +35,7 @@ class Scraper {
                 const date = moment(dateString).toDate();
 
                 // Push new object onto returned array
-                news.push({ url, image, title, summary, date });
+                news.push({ id, url, image, title, summary, date });
             });
 
             // Parse news objects
