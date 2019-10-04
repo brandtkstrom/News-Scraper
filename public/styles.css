@@ -43,6 +43,22 @@ a:hover {
     top: 0;
 }
 
+.comment,
+.card {
+    animation: shift ease-out 400ms;
+}
+
+@keyframes shift {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
 @media screen and (max-width: 767px) {
 
     .comment {
